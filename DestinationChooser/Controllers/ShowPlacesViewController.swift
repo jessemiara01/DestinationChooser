@@ -73,6 +73,8 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
         // set the text from the data model
+        let customColor = UIColor(red: 52, green: 69, blue: 158, alpha: 0)
+        cell.backgroundColor = customColor
         cell?.textLabel?.text = placeList[indexPath.row].placeName
         
         return cell
