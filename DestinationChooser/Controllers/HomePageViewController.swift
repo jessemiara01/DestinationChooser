@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 var test : String = "Nothing passed"
-class ViewController: UIViewController {
+class HomePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
