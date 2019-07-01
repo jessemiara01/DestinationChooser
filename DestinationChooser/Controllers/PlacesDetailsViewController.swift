@@ -34,7 +34,8 @@ class PlacesDetailsViewController: UIViewController {
 }
     
     public func removePost() {
-        reference.child("Places").child(IDToReceive).removeValue()
+        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
+        reference.child(userRef).child("Places").child(IDToReceive).removeValue()
 }
 
 }

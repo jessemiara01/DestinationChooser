@@ -31,8 +31,8 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func retreiveMessages() {
-        
-        let placesDB = Database.database().reference().child("Places")
+        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
+        let placesDB = Database.database().reference().child(userRef).child("Places")
         
         placesDB.observe(.childAdded) {(snapshot) in
             let snapshotValue = snapshot.value as! Dictionary <String, String>

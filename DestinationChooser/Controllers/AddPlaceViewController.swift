@@ -44,6 +44,7 @@ extension AddPlaceViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         
+        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
         let POIName = (place.name ?? "N/A")
         let POIAddress = (place.formattedAddress ?? "N/A")
         let PlaceID = place.placeID ?? "N/A"
@@ -51,7 +52,7 @@ extension AddPlaceViewController: GMSAutocompleteViewControllerDelegate {
         dismiss(animated: false, completion: nil)
         performSegue(withIdentifier: "homeAfterAdd", sender: self)
         
-        let placesDB = Database.database().reference().child("Places")
+        let placesDB = Database.database().reference().child(userRef).child("Places")
         let placesDictionary = ["Name" : POIName,
                                  "Address" : POIAddress,
                                  "PlaceID" : PlaceID]
