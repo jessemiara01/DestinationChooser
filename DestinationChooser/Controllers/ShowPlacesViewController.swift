@@ -16,6 +16,8 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     let cellReuseIdentifier  = "cell"
     
+    var currentRow = 0
+    
 
 
     var placeList = [Places]()
@@ -30,6 +32,7 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
 
         // Do any additional setup after loading the view.
         retreiveMessages()
+        
     }
     
 
@@ -44,10 +47,13 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
             
             let name = snapshotValue["Name"]!
             let address = snapshotValue["Address"]!
+            let placeID = snapshotValue["PlaceID"]
+            print(name,address,placeID!)
             
             let places = Places()
             places.placeName = name
             places.address = address
+            places.placeID = placeID ?? "Test"
             
             self.placeList.append(places)
             self.tableView.reloadData()
@@ -79,6 +85,23 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentRow = indexPath.row
+       performSegue(withIdentifier: "toDetails", sender: self)
     
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetails"{
+            
+            let destinationVC = segue.destination as! PlacesDetailsViewController
+            destinationVC.nameToReceive = placeList[currentRow].placeName
+            destinationVC.addressToReceive = placeList[currentRow].address
+            destinationVC.IDToReceive = placeList[currentRow].placeID
+            
+            
+            
+        }
+    }
 
 }

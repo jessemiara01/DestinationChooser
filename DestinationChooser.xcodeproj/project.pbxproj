@@ -16,6 +16,7 @@
 		834A64C522C83598000D81BD /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A64C422C83598000D81BD /* AddPlaceViewController.swift */; };
 		834A64C722C84AD8000D81BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 834A64C622C84AD8000D81BD /* GoogleService-Info.plist */; };
 		834A64C922C8565F000D81BD /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A64C822C8565F000D81BD /* Places.swift */; };
+		834A64D022C96015000D81BD /* PlacesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A64CE22C96015000D81BD /* PlacesDetailsViewController.swift */; };
 		90EDEDBE62029F20EE15E5CD /* Pods_DestinationChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3125FACDCFD0534F62260BA3 /* Pods_DestinationChooser.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		834A64C422C83598000D81BD /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		834A64C622C84AD8000D81BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		834A64C822C8565F000D81BD /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		834A64CE22C96015000D81BD /* PlacesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				834A64AD22C83396000D81BD /* AppDelegate.swift */,
 				834A64C222C83588000D81BD /* ShowPlacesViewController.swift */,
 				834A64C422C83598000D81BD /* AddPlaceViewController.swift */,
+				834A64CE22C96015000D81BD /* PlacesDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				834A64C322C83588000D81BD /* ShowPlacesViewController.swift in Sources */,
 				834A64B022C83396000D81BD /* ViewController.swift in Sources */,
 				834A64AE22C83396000D81BD /* AppDelegate.swift in Sources */,
+				834A64D022C96015000D81BD /* PlacesDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,8 @@
 import Foundation
 
 class Places{
-    var placeName: String = ""
-    var address: String = ""
+    var placeName : String = ""
+    var address : String = ""
+    var placeID : String = ""
 
 }

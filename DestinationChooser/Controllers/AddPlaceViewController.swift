@@ -18,6 +18,8 @@ class AddPlaceViewController: UIViewController {
         startMapModule()
     }
     
+
+    
     // Present the Autocomplete view controller when the button is pressed.
     @objc func startMapModule() {
         let autocompleteController = GMSAutocompleteViewController()
@@ -25,7 +27,7 @@ class AddPlaceViewController: UIViewController {
         
         // Specify the place data types to return.
         let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
-            UInt(GMSPlaceField.formattedAddress.rawValue))!
+            UInt(GMSPlaceField.formattedAddress.rawValue) | UInt(GMSPlaceField.placeID.rawValue))!
         autocompleteController.placeFields = fields
         
         // Specify a filter.
@@ -47,15 +49,19 @@ extension AddPlaceViewController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         let POIName = (place.name ?? "N/A")
         let POIAddress = (place.formattedAddress ?? "N/A")
+        let PlaceID = place.placeID ?? "N/A"
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "homeAfterAdd", sender: self)
         
-        let messageDB = Database.database().reference().child("Places")
+        let placesDB = Database.database().reference().child("Places")
         
-        let messageDictionary = ["Name" : POIName,
-                                 "Address" : POIAddress]
         
-        messageDB.childByAutoId().setValue(messageDictionary) {
+        let placesDictionary = ["Name" : POIName,
+                                 "Address" : POIAddress,
+                                 "PlaceID" : PlaceID]
+        
+        
+        placesDB.child(PlaceID).setValue(placesDictionary) {
             (error, reference) in
             
             if error != nil{
