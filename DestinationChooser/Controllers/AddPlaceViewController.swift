@@ -32,7 +32,7 @@ class AddPlaceViewController: UIViewController {
         autocompleteController.autocompleteFilter = filter
         
         // Display the autocomplete view controller.
-        present(autocompleteController, animated: true, completion: nil)
+        present(autocompleteController, animated: false, completion: nil)
     }
     
 
@@ -48,7 +48,7 @@ extension AddPlaceViewController: GMSAutocompleteViewControllerDelegate {
         let POIAddress = (place.formattedAddress ?? "N/A")
         let PlaceID = place.placeID ?? "N/A"
         
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
         performSegue(withIdentifier: "homeAfterAdd", sender: self)
         
         let placesDB = Database.database().reference().child("Places")
@@ -76,7 +76,8 @@ extension AddPlaceViewController: GMSAutocompleteViewControllerDelegate {
     
     // User canceled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
+        performSegue(withIdentifier: "homeAfterAdd", sender: self)
     }
     
     // Turn the network activity indicator on and off again.
