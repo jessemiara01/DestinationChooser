@@ -190,6 +190,8 @@
                         <viewLayoutGuide key="safeArea" id="ErI-Dy-XkO"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="qe6-qk-83X" id="vai-T0-KGd"/>
+                        <outlet property="passwordTextField" destination="dOj-0d-36X" id="bC0-7I-VZ8"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="afterRegister" id="2R9-ab-b1J"/>
                     </connections>
                 </viewController>
@@ -294,6 +296,8 @@
                         <viewLayoutGuide key="safeArea" id="mfs-Yy-cou"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="14y-WX-jXc" id="xzb-4t-f8o"/>
+                        <outlet property="passwordTextField" destination="qgm-3S-iw7" id="ElM-x0-PSa"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="afterLogin" id="Ehn-3j-83r"/>
                     </connections>
                 </viewController>
