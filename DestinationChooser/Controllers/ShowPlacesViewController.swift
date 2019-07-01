@@ -15,13 +15,8 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet var tableView: UITableView!
     
     let cellReuseIdentifier  = "cell"
-    
     var currentRow = 0
-    
-
-
     var placeList = [Places]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +30,11 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
     
-
-
     func retreiveMessages() {
         
         let placesDB = Database.database().reference().child("Places")
         
-        placesDB.observe(.childAdded) {(snapshot)
-            in
+        placesDB.observe(.childAdded) {(snapshot) in
             let snapshotValue = snapshot.value as! Dictionary <String, String>
             
             let name = snapshotValue["Name"]!
@@ -59,11 +51,7 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
             self.tableView.reloadData()
             
         }
-        
-        
     }
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placeList.count
@@ -85,10 +73,10 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentRow = indexPath.row
        performSegue(withIdentifier: "toDetails", sender: self)
-    
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -103,5 +91,4 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
             
         }
     }
-
 }

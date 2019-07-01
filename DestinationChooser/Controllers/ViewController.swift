@@ -11,22 +11,13 @@ import Firebase
 var test : String = "Nothing passed"
 class ViewController: UIViewController {
     
-
-
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Override point for customization after application launch.
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
         }
-
-        // Do any additional setup after loading the view.
-
-       
     }
-
 
     @IBAction func addNewPlaceButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "toAddNew", sender: self)

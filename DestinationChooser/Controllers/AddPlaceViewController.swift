@@ -12,13 +12,9 @@ import Firebase
 
 class AddPlaceViewController: UIViewController {
     
-
-    
     override func viewDidLoad() {
         startMapModule()
     }
-    
-
     
     // Present the Autocomplete view controller when the button is pressed.
     @objc func startMapModule() {
@@ -47,15 +43,15 @@ extension AddPlaceViewController: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        
         let POIName = (place.name ?? "N/A")
         let POIAddress = (place.formattedAddress ?? "N/A")
         let PlaceID = place.placeID ?? "N/A"
+        
         dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "homeAfterAdd", sender: self)
         
         let placesDB = Database.database().reference().child("Places")
-        
-        
         let placesDictionary = ["Name" : POIName,
                                  "Address" : POIAddress,
                                  "PlaceID" : PlaceID]
@@ -69,15 +65,8 @@ extension AddPlaceViewController: GMSAutocompleteViewControllerDelegate {
             }
             else {
                 print("Successfully added to DB")
-                
             }
         }
-        
-    
-        
-
-        
-
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
