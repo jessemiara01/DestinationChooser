@@ -19,6 +19,7 @@
 		834A64C722C84AD8000D81BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 834A64C622C84AD8000D81BD /* GoogleService-Info.plist */; };
 		834A64C922C8565F000D81BD /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A64C822C8565F000D81BD /* Places.swift */; };
 		834A64D022C96015000D81BD /* PlacesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A64CE22C96015000D81BD /* PlacesDetailsViewController.swift */; };
+		83B7FEE522CBB4A3009CA860 /* RandomPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B7FEE422CBB4A3009CA860 /* RandomPlaceViewController.swift */; };
 		90EDEDBE62029F20EE15E5CD /* Pods_DestinationChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3125FACDCFD0534F62260BA3 /* Pods_DestinationChooser.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		834A64C622C84AD8000D81BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		834A64C822C8565F000D81BD /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		834A64CE22C96015000D81BD /* PlacesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailsViewController.swift; sourceTree = "<group>"; };
+		83B7FEE422CBB4A3009CA860 /* RandomPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				83047C4B22CA99550085E039 /* WelcomeViewController.swift */,
 				83047C4D22CA99640085E039 /* LoginViewController.swift */,
 				83047C4F22CA99700085E039 /* RegisterViewController.swift */,
+				83B7FEE422CBB4A3009CA860 /* RandomPlaceViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				83047C5022CA99700085E039 /* RegisterViewController.swift in Sources */,
 				834A64C922C8565F000D81BD /* Places.swift in Sources */,
 				834A64C322C83588000D81BD /* ShowPlacesViewController.swift in Sources */,
+				83B7FEE522CBB4A3009CA860 /* RandomPlaceViewController.swift in Sources */,
 				834A64B022C83396000D81BD /* HomePageViewController.swift in Sources */,
 				83047C4E22CA99640085E039 /* LoginViewController.swift in Sources */,
 				834A64AE22C83396000D81BD /* AppDelegate.swift in Sources */,

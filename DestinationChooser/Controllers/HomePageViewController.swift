@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 import GooglePlaces
 
-var test : String = "Nothing passed"
 class HomePageViewController: UIViewController {
     
     override func viewDidLoad() {
