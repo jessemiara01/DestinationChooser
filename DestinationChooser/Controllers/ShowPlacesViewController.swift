@@ -18,6 +18,9 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
     var currentRow = 0
     var placeList = [Places]()
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -16,7 +16,6 @@
 		834A64B522C83397000D81BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 834A64B422C83397000D81BD /* Assets.xcassets */; };
 		834A64B822C83397000D81BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834A64B622C83397000D81BD /* LaunchScreen.storyboard */; };
 		834A64C322C83588000D81BD /* ShowPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A64C222C83588000D81BD /* ShowPlacesViewController.swift */; };
-		834A64C522C83598000D81BD /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A64C422C83598000D81BD /* AddPlaceViewController.swift */; };
 		834A64C722C84AD8000D81BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 834A64C622C84AD8000D81BD /* GoogleService-Info.plist */; };
 		834A64C922C8565F000D81BD /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A64C822C8565F000D81BD /* Places.swift */; };
 		834A64D022C96015000D81BD /* PlacesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A64CE22C96015000D81BD /* PlacesDetailsViewController.swift */; };
@@ -38,7 +37,6 @@
 		834A64B722C83397000D81BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		834A64B922C83397000D81BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		834A64C222C83588000D81BD /* ShowPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPlacesViewController.swift; sourceTree = "<group>"; };
-		834A64C422C83598000D81BD /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		834A64C622C84AD8000D81BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		834A64C822C8565F000D81BD /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		834A64CE22C96015000D81BD /* PlacesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailsViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				834A64AF22C83396000D81BD /* HomePageViewController.swift */,
 				834A64AD22C83396000D81BD /* AppDelegate.swift */,
 				834A64C222C83588000D81BD /* ShowPlacesViewController.swift */,
-				834A64C422C83598000D81BD /* AddPlaceViewController.swift */,
 				834A64CE22C96015000D81BD /* PlacesDetailsViewController.swift */,
 				83047C4B22CA99550085E039 /* WelcomeViewController.swift */,
 				83047C4D22CA99640085E039 /* LoginViewController.swift */,
@@ -298,7 +295,6 @@
 			files = (
 				83047C5022CA99700085E039 /* RegisterViewController.swift in Sources */,
 				834A64C922C8565F000D81BD /* Places.swift in Sources */,
-				834A64C522C83598000D81BD /* AddPlaceViewController.swift in Sources */,
 				834A64C322C83588000D81BD /* ShowPlacesViewController.swift in Sources */,
 				834A64B022C83396000D81BD /* HomePageViewController.swift in Sources */,
 				83047C4E22CA99640085E039 /* LoginViewController.swift in Sources */,

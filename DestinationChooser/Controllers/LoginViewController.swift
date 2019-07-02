@@ -12,6 +12,10 @@ import Firebase
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+ 
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated:true, completion: nil)
+    }
     
     @IBAction func loginPressed(_ sender: Any) {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
