@@ -8,21 +8,21 @@
 
 import UIKit
 import Firebase
+import NotificationBannerSwift
 
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
-    @IBAction func backButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - Navigation
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func registerPressed(_ sender: Any) {
@@ -31,23 +31,17 @@ class RegisterViewController: UIViewController {
             (user, error) in
             if error != nil {
                 print(error!)
+                let banner = NotificationBanner(title: "Could Not Register",subtitle: "Please try again", style: .danger)
+                banner.show()
             }
             else{
-                print("User Registered")                
+                print("User Registered")
                 self.performSegue(withIdentifier: "afterRegister", sender: self)
             }
         }
-
+        
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
 
 }

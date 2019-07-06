@@ -11,30 +11,22 @@ import Firebase
 
 class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
     @IBOutlet var tableView: UITableView!
     
     let cellReuseIdentifier  = "cell"
     var currentRow = 0
     var placeList = [Places]()
     
-    @IBAction func backButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
         
-
-        // Do any additional setup after loading the view.
         retreiveMessages()
-        
     }
-    
+    //MARK: - Data Manipulation
     func retreiveMessages() {
-        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
         let placesDB = Database.database().reference().child(userRef).child("Places")
         
         placesDB.observe(.childAdded) {(snapshot) in
@@ -56,6 +48,7 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    //MARK: - TableView Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placeList.count
     }
@@ -82,6 +75,7 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
        performSegue(withIdentifier: "toDetails", sender: self)
     }
     
+    //MARK: - Navigation 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetails"{
             
@@ -93,5 +87,9 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
             
             
         }
+    }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }

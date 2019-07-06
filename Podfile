@@ -13,4 +13,5 @@ target 'DestinationChooser' do
   pod 'Firebase/Firestore'
   pod 'GooglePlaces'
   pod 'GoogleMaps'
+  pod 'NotificationBannerSwift'
 end

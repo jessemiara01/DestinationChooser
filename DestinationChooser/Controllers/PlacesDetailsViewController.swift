@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-
+import NotificationBannerSwift
 class PlacesDetailsViewController: UIViewController {
 
     @IBOutlet weak var addressLabel: UILabel!
@@ -34,7 +34,6 @@ class PlacesDetailsViewController: UIViewController {
 }
     
     public func removePost() {
-        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
         reference.child(userRef).child("Places").child(IDToReceive).removeValue()
 }
 

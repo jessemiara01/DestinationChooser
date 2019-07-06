@@ -15,23 +15,16 @@ class RandomPlaceViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     
-    let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
-    
     var placeList = [Places]()
     var rand = -1
-    
-    
-    
-    
-    
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         generateRandomEntry()
     }
+    
+    //MARK: - Data Manipulation
     func generateRandomEntry() {
         let placesDB = Database.database().reference().child(userRef).child("Places")
         
@@ -59,6 +52,7 @@ class RandomPlaceViewController: UIViewController {
         }
     }
 
+    //MARK: - Navigation
     
     @IBAction func RandomButtonPressed(_ sender: UIButton) {
         generateRandomEntry()
@@ -70,16 +64,13 @@ class RandomPlaceViewController: UIViewController {
     
     @IBAction func deletePressed(_ sender: Any) {
         if rand > 0{
-            print(rand)
-
             let placeToRemove = Database.database().reference().child(userRef).child("Places").child(placeList[rand].placeID)
             
             placeToRemove.removeValue()
             generateRandomEntry()
-            
-        }
+            }
         else{
-            print(rand)
+            print("Couldn't Delete Entry")
         }
     }
     

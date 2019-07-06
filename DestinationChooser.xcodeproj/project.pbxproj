@@ -19,6 +19,7 @@
 		834A64C722C84AD8000D81BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 834A64C622C84AD8000D81BD /* GoogleService-Info.plist */; };
 		834A64C922C8565F000D81BD /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A64C822C8565F000D81BD /* Places.swift */; };
 		834A64D022C96015000D81BD /* PlacesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A64CE22C96015000D81BD /* PlacesDetailsViewController.swift */; };
+		838358F122D003DA005FCC1C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838358F022D003DA005FCC1C /* Constants.swift */; };
 		83B7FEE522CBB4A3009CA860 /* RandomPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B7FEE422CBB4A3009CA860 /* RandomPlaceViewController.swift */; };
 		90EDEDBE62029F20EE15E5CD /* Pods_DestinationChooser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3125FACDCFD0534F62260BA3 /* Pods_DestinationChooser.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		834A64C622C84AD8000D81BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		834A64C822C8565F000D81BD /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		834A64CE22C96015000D81BD /* PlacesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailsViewController.swift; sourceTree = "<group>"; };
+		838358F022D003DA005FCC1C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		83B7FEE422CBB4A3009CA860 /* RandomPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				834A64B622C83397000D81BD /* LaunchScreen.storyboard */,
 				834A64B922C83397000D81BD /* Info.plist */,
 				834A64C622C84AD8000D81BD /* GoogleService-Info.plist */,
+				838358F022D003DA005FCC1C /* Constants.swift */,
 			);
 			path = DestinationChooser;
 			sourceTree = "<group>";
@@ -241,7 +244,11 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -254,7 +261,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -301,6 +312,7 @@
 				834A64C322C83588000D81BD /* ShowPlacesViewController.swift in Sources */,
 				83B7FEE522CBB4A3009CA860 /* RandomPlaceViewController.swift in Sources */,
 				834A64B022C83396000D81BD /* HomePageViewController.swift in Sources */,
+				838358F122D003DA005FCC1C /* Constants.swift in Sources */,
 				83047C4E22CA99640085E039 /* LoginViewController.swift in Sources */,
 				834A64AE22C83396000D81BD /* AppDelegate.swift in Sources */,
 				834A64D022C96015000D81BD /* PlacesDetailsViewController.swift in Sources */,

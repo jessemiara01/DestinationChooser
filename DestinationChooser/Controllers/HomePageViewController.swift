@@ -19,7 +19,8 @@ class HomePageViewController: UIViewController {
             FirebaseApp.configure()
         }
     }
-
+    
+    //MARK: - Navigation
     @IBAction func addNewPlaceButtonPressed(_ sender: Any) {
         startMapModule()
     }
@@ -42,7 +43,7 @@ class HomePageViewController: UIViewController {
     
     
     
-    // Present the Autocomplete view controller when the button is pressed.
+    // MARK: - Google Places Methods
     @objc func startMapModule() {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
@@ -70,7 +71,6 @@ extension HomePageViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         
-        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
         let POIName = (place.name ?? "N/A")
         let POIAddress = (place.formattedAddress ?? "N/A")
         let PlaceID = place.placeID ?? "N/A"
