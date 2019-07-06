@@ -27,7 +27,13 @@ class PlacesDetailsViewController: UIViewController {
         addressLabel.text = addressToReceive
 
     }
-
+    //MARK: - Navigaton
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: - Delete Functionality
     @IBAction func deleteButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "detailsToHome", sender: self)
         removePost()
