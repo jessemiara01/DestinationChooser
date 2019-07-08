@@ -25,26 +25,32 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         retreiveMessages()
     }
-    //MARK: - Data Manipulation
+   
+    
+    //MARK: - Firestore Methods
     func retreiveMessages() {
-        let placesDB = Database.database().reference().child(userRef).child("Places")
         
-        placesDB.observe(.childAdded) {(snapshot) in
-            let snapshotValue = snapshot.value as! Dictionary <String, String>
-            
-            let name = snapshotValue["Name"]!
-            let address = snapshotValue["Address"]!
-            let placeID = snapshotValue["PlaceID"]
-            print(name,address,placeID!)
-            
-            let places = Places()
-            places.placeName = name
-            places.address = address
-            places.placeID = placeID ?? "Test"
-            
-            self.placeList.append(places)
-            self.tableView.reloadData()
-            
+        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
+
+        db.collection("\(userRef)").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let name = document.data()["Name"] as! String
+                    let address = document.data()["Address"] as! String
+                    let placeID = document.data()["PlaceID"] as! String
+
+                    
+                    let places = Places()
+                    places.placeName = name
+                    places.address = address
+                    places.placeID = placeID
+                    
+                    self.placeList.append(places)
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
     

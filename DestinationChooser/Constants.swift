@@ -9,7 +9,11 @@
 import Foundation
 import Firebase
 
+let db = Firestore.firestore()
 
-let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
+
+
+
+
 
 let googleAPIKey : String = "AIzaSyDmUvzkBmM44YLB9qqrBrniO701r0fh6hI"

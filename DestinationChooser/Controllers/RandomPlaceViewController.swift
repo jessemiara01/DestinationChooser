@@ -26,29 +26,31 @@ class RandomPlaceViewController: UIViewController {
     
     //MARK: - Data Manipulation
     func generateRandomEntry() {
-        let placesDB = Database.database().reference().child(userRef).child("Places")
         
-        placesDB.observe(.childAdded) {(snapshot) in
-            let snapshotValue = snapshot.value as! Dictionary <String, String>
-            
-            let name = snapshotValue["Name"]!
-            let address = snapshotValue["Address"]!
-            let placeID = snapshotValue["PlaceID"]
-
-            
-            let places = Places()
-            places.placeName = name
-            places.address = address
-            places.placeID = placeID ?? "Test"
-            
-            self.placeList.append(places)
-            
-            self.rand = Int.random(in: 0 ..< self.placeList.count)
-
-            
-            self.nameLabel.text = self.placeList[self.rand].placeName
-            self.addressLabel.text = self.placeList[self.rand].address
-
+        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
+        
+        db.collection("\(userRef)").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let name = document.data()["Name"] as! String
+                    let address = document.data()["Address"] as! String
+                    let placeID = document.data()["PlaceID"] as! String
+                    
+                    
+                    let places = Places()
+                    places.placeName = name
+                    places.address = address
+                    places.placeID = placeID
+                    
+                    self.placeList.append(places)
+                    self.rand = Int.random(in: 0 ..< self.placeList.count)
+                    
+                    self.nameLabel.text = self.placeList[self.rand].placeName
+                    self.addressLabel.text = self.placeList[self.rand].address
+                }
+            }
         }
     }
 
@@ -63,15 +65,19 @@ class RandomPlaceViewController: UIViewController {
     }
     
     @IBAction func deletePressed(_ sender: Any) {
-        if rand > 0{
-            let placeToRemove = Database.database().reference().child(userRef).child("Places").child(placeList[rand].placeID)
-            
-            placeToRemove.removeValue()
-            generateRandomEntry()
+        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
+        if rand >= 0{
+            let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
+            db.collection("\(userRef)").document(placeList[rand].placeID).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
             }
-        else{
-            print("Couldn't Delete Entry")
+
         }
+    dismiss(animated: true, completion: nil)
     }
     
 
