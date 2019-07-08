@@ -122,7 +122,6 @@ PODS:
     - MarqueeLabel (~> 4.0.0)
     - SnapKit (~> 5.0.0)
   - Protobuf (3.8.0)
-  - SCLAlertView (0.8)
   - SnapKit (5.0.0)
 
 DEPENDENCIES:
@@ -134,7 +133,6 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - NotificationBannerSwift
-  - SCLAlertView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -159,7 +157,6 @@ SPEC REPOS:
     - nanopb
     - NotificationBannerSwift
     - Protobuf
-    - SCLAlertView
     - SnapKit
 
 SPEC CHECKSUMS:
@@ -184,9 +181,8 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NotificationBannerSwift: fdc44b934be7a8175f7a7170a75a11c672990e70
   Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
-  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: 7a18855671f1cdb65225ece0b24e4f2f74b0d751
+PODFILE CHECKSUM: 247fc2781edfcba290356a2b857eea5f1f22f5c8
 
 COCOAPODS: 1.6.1
