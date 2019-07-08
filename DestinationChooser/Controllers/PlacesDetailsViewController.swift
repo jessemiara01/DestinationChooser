@@ -40,7 +40,14 @@ class PlacesDetailsViewController: UIViewController {
 }
     
     public func removePost() {
-        reference.child(userRef).child("Places").child(IDToReceive).removeValue()
+        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
+        db.collection("\(userRef)").document(IDToReceive).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
 }
 
 }

@@ -74,25 +74,33 @@ extension HomePageViewController: GMSAutocompleteViewControllerDelegate {
         let POIName = (place.name ?? "N/A")
         let POIAddress = (place.formattedAddress ?? "N/A")
         let PlaceID = place.placeID ?? "N/A"
+        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
         
         dismiss(animated: false, completion: nil)
         
-        let placesDB = Database.database().reference().child(userRef).child("Places")
+//        let placesDB = Database.database().reference().child(userRef).child("Places")
         let placesDictionary = ["Name" : POIName,
                                 "Address" : POIAddress,
                                 "PlaceID" : PlaceID]
         
-        
-        placesDB.child(PlaceID).setValue(placesDictionary) {
-            (error, reference) in
-            
-            if error != nil{
-                print(error!)
-            }
-            else {
-                print("Successfully added to DB")
+        db.collection("\(userRef)").document(PlaceID).setData(placesDictionary) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
             }
         }
+        
+//        placesDB.child(PlaceID).setValue(placesDictionary) {
+//            (error, reference) in
+//
+//            if error != nil{
+//                print(error!)
+//            }
+//            else {
+//                print("Successfully added to DB")
+//            }
+//        }
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
