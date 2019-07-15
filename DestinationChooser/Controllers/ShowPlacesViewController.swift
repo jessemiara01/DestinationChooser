@@ -82,6 +82,26 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
        performSegue(withIdentifier: "toDetails", sender: self)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
+            db.collection("\(userRef)").document(placeList[indexPath.row].placeID).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                    self.placeList.remove(at: indexPath.row)
+                    self.tableView.deleteRows(at: [indexPath], with: .bottom)
+                }
+            }
+            
+        }
+    }
+    
     //MARK: - Navigation 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetails"{
