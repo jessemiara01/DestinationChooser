@@ -8,8 +8,8 @@
 
 import UIKit
 import Firebase
-
-class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+import SwipeCellKit
+class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet var tableView: UITableView!
     
@@ -32,6 +32,7 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
 
+ 
         db.collection("\(userRef)").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -99,3 +100,4 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
         dismiss(animated: true, completion: nil)
     }
 }
+

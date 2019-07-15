@@ -14,4 +14,5 @@ target 'DestinationChooser' do
   pod 'GooglePlaces'
   pod 'GoogleMaps'
   pod 'NotificationBannerSwift'
+  pod 'SwipeCellKit'
 end
