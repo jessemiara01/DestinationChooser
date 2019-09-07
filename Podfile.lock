@@ -118,7 +118,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - NotificationBannerSwift (2.4.0):
+  - NotificationBannerSwift (2.4.1):
     - MarqueeLabel (~> 4.0.0)
     - SnapKit (~> 5.0.0)
   - Protobuf (3.9.0)
@@ -182,7 +182,7 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   MarqueeLabel: b55b26e690b6ad41faedd95cbf5eae6f1d1735b4
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  NotificationBannerSwift: bf2dafdbf7c6946ac4c128107e36aa1470b3dacf
+  NotificationBannerSwift: 1e914a69fe5adbf1d39231a3605a9203fdc9c674
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb

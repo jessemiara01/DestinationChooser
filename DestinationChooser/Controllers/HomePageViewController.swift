@@ -78,7 +78,6 @@ extension HomePageViewController: GMSAutocompleteViewControllerDelegate {
         
         dismiss(animated: false, completion: nil)
         
-//        let placesDB = Database.database().reference().child(userRef).child("Places")
         let placesDictionary = ["Name" : POIName,
                                 "Address" : POIAddress,
                                 "PlaceID" : PlaceID]
@@ -90,21 +89,9 @@ extension HomePageViewController: GMSAutocompleteViewControllerDelegate {
                 print("Document successfully written!")
             }
         }
-        
-//        placesDB.child(PlaceID).setValue(placesDictionary) {
-//            (error, reference) in
-//
-//            if error != nil{
-//                print(error!)
-//            }
-//            else {
-//                print("Successfully added to DB")
-//            }
-//        }
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        // TODO: handle the error.
         print("Error: ", error.localizedDescription)
     }
     

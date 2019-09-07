@@ -43,10 +43,7 @@ class ShowPlacesViewController: UIViewController, UITableViewDelegate, UITableVi
                     let placeID = document.data()["PlaceID"] as! String
 
                     
-                    let places = Places()
-                    places.placeName = name
-                    places.address = address
-                    places.placeID = placeID
+                    let places = Places(placeName: name, address: address, placeID: placeID)
                     
                     self.placeList.append(places)
                     self.tableView.reloadData()

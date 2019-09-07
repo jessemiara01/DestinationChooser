@@ -17,6 +17,7 @@ class RandomPlaceViewController: UIViewController {
     
     var placeList = [Places]()
     var rand = -1
+    var lastRand = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +39,16 @@ class RandomPlaceViewController: UIViewController {
                     let address = document.data()["Address"] as! String
                     let placeID = document.data()["PlaceID"] as! String
                     
-                    
-                    let places = Places()
-                    places.placeName = name
-                    places.address = address
-                    places.placeID = placeID
+                    let places = Places(placeName: name, address: address, placeID: placeID)
                     
                     self.placeList.append(places)
                     self.rand = Int.random(in: 0 ..< self.placeList.count)
+
+                    while self.rand == self.lastRand{
+                        self.rand = Int.random(in: 0 ..< self.placeList.count)
+                    }
                     
+                    self.lastRand = self.rand
                     self.nameLabel.text = self.placeList[self.rand].placeName
                     self.addressLabel.text = self.placeList[self.rand].address
                 }
@@ -65,7 +67,6 @@ class RandomPlaceViewController: UIViewController {
     }
     
     @IBAction func deletePressed(_ sender: Any) {
-        let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
         if rand >= 0{
             let userRef = (Auth.auth().currentUser?.email)!.replacingOccurrences(of: ".", with: "")
             db.collection("\(userRef)").document(placeList[rand].placeID).delete() { err in

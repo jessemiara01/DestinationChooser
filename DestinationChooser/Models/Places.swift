@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Places{
+struct Places{
     var placeName : String = ""
     var address : String = ""
     var placeID : String = ""

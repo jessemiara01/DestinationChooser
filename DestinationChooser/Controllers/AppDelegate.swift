@@ -28,5 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(googleAPIKey)
         return true
     }
+    
 }
 
